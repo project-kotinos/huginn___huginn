@@ -39,7 +39,7 @@ build_targets:
   dependencies:
       containers:
         db:
-          image: mysql/mysql:latest
+          image: mysql:latest
           environment:
             - MYSQL_ROOT_PASSWORD=root
             - MYSQL_DATABASE=huginn_test
