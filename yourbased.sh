@@ -15,7 +15,15 @@ export MERB_ENV=test
 gem update --system
 gem install bundler
 
-apt-get install -y libcurl4-openssl-dev
+apt-get install -y libcurl4-openssl-dev libfontconfig
+
+#install phantomjs
+rm -rf $PWD/travis_phantomjs; mkdir -p $PWD/travis_phantomjs
+wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 -O $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2
+tar -xvf $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2 -C $PWD/travis_phantomjs
+PATH=$PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64/bin:$PATH
+phantomjs --version
+
 #install
 bundle install --without development production
 
