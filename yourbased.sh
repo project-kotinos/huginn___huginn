@@ -15,6 +15,7 @@ export MERB_ENV=test
 gem update --system
 gem install bundler
 
+apt-get install libcurl4-openssl-dev
 #install
 bundle install --without development production
 
