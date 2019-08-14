@@ -32,19 +32,19 @@ build_targets:
   name: mysql
   environment:
       - DATABASE_ADAPTER=mysql2
+      - DATABASE_USERNAME=root
+      - DATABASE_PASSWORD=root
       - MYSQL_HOST={{ .Containers.IP "db" }}
       - DATABASE_URL=mysql2://root:root@{{ .Containers.IP "db" }}:3306/huginn_test
   dependencies:
       containers:
         db:
-          image: mysql/mysql-server:latest
+          image: mysql/mysql:latest
           environment:
             - MYSQL_ROOT_PASSWORD=root
             - MYSQL_DATABASE=huginn_test
             - MYSQL_USER=db
             - MYSQL_PASSWORD=db
-            - DATABASE_USERNAME=root
-            - DATABASE_PASSWORD=root
           port_check:
             port: 3306
             timeout: 45
