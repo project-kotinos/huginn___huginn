@@ -33,7 +33,7 @@ build_targets:
   environment:
       - DATABASE_ADAPTER=mysql2
       - MYSQLHOST={{ .Containers.IP "db" }}
-      - DATABASE_URL=tcp://ci:ci@{{ .Containers.IP "db" }}:3306/travis_ci_test
+      - DATABASE_URL=mysql2://root:ci@{{ .Containers.IP "db" }}:3306/travis_ci_test
   dependencies:
       containers:
         db:
