@@ -182,7 +182,7 @@ gem 'tzinfo', '>= 1.2.0'	# required by rails; 1.2.0 has support for *BSD and Sol
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 # BSD systems require rb-kqueue for "listen" to avoid polling for changes.
 gem 'rb-kqueue', '>= 0.2', require: /bsd|dragonfly/i === RbConfig::CONFIG['target_os']
-
+gem 'yourbase-rspec-skipper'
 
 on_heroku = ENV['ON_HEROKU'] ||
             ENV['HEROKU_POSTGRESQL_ROSE_URL'] ||
